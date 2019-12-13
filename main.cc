@@ -10,6 +10,7 @@
 #include "behaviors/behavior.h"
 #include "behaviors/naobehavior.h"
 #include "optimization/optimizationbehaviors.h"
+#include "optimization/walkoptbehaviors.h"
 #include "behaviors/pkbehaviors.h"
 #include "behaviors/gazebobehavior.h"
 #include "stats/recordstatsbehavior.h"
@@ -480,6 +481,10 @@ bool GetMessage(string& msg)
 void Run()
 {
     Behavior *behavior;
+
+    //for debug
+    std::cerr << "AgentType = " << agentType << std::endl;
+
     if (agentType == "naoagent") {
         behavior = new NaoBehavior(teamName, uNum, namedParams, rsg);
     }
@@ -508,6 +513,9 @@ void Run()
                 namedParams,
                 rsg,
                 outputFile);
+    }
+    else if ( agentType == "walkOptAgent") {
+        behavior = new WalkOptBehaviors(teamName, uNum, namedParams, rsg);
     }
     else if ( agentType == "recordstats") {
         behavior = new RecordStatsBehavior(teamName, uNum, namedParams, rsg,

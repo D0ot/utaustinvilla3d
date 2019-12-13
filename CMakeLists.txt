@@ -78,6 +78,7 @@ set(SRCS
   kalman/PlayerKF.cpp 
   kalman/OrigKalmanFilter.cpp
   optimization/optimizationbehaviors.cc
+  optimization/walkoptbehaviors.cc
   stats/recordstatsbehavior.cc
 )
 
