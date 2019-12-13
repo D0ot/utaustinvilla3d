@@ -6,3 +6,5 @@ CMakeFiles
 Makefile
 agentspark
 libs/*.so*
+.vscode/
+build/
