@@ -108,7 +108,7 @@ for ((i=1;i<=$NUM_PLAYERS;i++)); do
     case $i in
 	1|2)
 	    echo "Running agent No. $i -- Type 0"
-	    echo "$BINARY_DIR/$AGENT_BINARY" $opt --unum $i --type 0 --paramsfile paramfiles/defaultParams_t0.txt &#> /dev/null &
+	    "$BINARY_DIR/$AGENT_BINARY" $opt --unum $i --type 0 --paramsfile paramfiles/defaultParams_t0.txt &#> /dev/null &
 	    #"$BINARY_DIR/$AGENT_BINARY" $opt --unum $i --type 0 --paramsfile paramfiles/defaultParams_t0.txt > stdout$i 2> stderr$i &
 	    ;;
 	3|4)
