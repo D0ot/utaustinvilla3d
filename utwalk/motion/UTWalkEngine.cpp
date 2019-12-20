@@ -7,6 +7,7 @@ extern int agentBodyType;
 
 UTWalkEngine::UTWalkEngine()
 {
+    last_param_set_ = WalkRequestBlock::PARAMS_NONE;
     paramSets[WalkRequestBlock::PARAMS_DEFAULT] = WalkEngineParameters();
     paramSets[WalkRequestBlock::PARAMS_POSITIONING] = WalkEngineParameters("pos_");
     paramSets[WalkRequestBlock::PARAMS_APPROACH_BALL] = WalkEngineParameters("app_");
@@ -52,15 +53,14 @@ void UTWalkEngine::setWalkParameters(WalkRequestBlock::ParamSet paramSet)
      * optimiztion.
      */
 
-    static WalkRequestBlock::ParamSet last_param_set = WalkRequestBlock::PARAMS_NONE;
 
     if (paramSet == WalkRequestBlock::PARAMS_NONE)
         return;
 
-    if (last_param_set != paramSet)
+    if (last_param_set_ != paramSet)
     {
         setWalkParameters(paramSets[paramSet]);
-        last_param_set = paramSet;
+        last_param_set_ = paramSet;
     }
 }
 

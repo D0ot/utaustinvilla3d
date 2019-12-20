@@ -67,6 +67,7 @@ private:
     RobotDimensions robot_dimensions_;
 
     WalkEngineParameters params_;
+    WalkRequestBlock::ParamSet last_param_set_;
     map<WalkRequestBlock::ParamSet, WalkEngineParameters> paramSets;
 
     WalkRequestBlock::Motion last_frame_motion_;
