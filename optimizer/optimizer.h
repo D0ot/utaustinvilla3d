@@ -14,6 +14,7 @@ class Optimizer
 private:
     NaoBehavior *m_behavior;
 public:
+    Optimizer(NaoBehavior *behavior):m_behavior(behavior){};
     void setWalkParameters(WalkRequestBlock::ParamSet paramset, const WalkEngineParameters& params);
     void getWalkParameters(WalkRequestBlock::ParamSet paramset, WalkEngineParameters& params);
 };

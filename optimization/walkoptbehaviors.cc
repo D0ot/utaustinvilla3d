@@ -2,7 +2,8 @@
 
 WalkOptBehaviors::WalkOptBehaviors(const std::string teamName, int uNum, const map<string, string> &namedParams_, const string &rsg_)
     : NaoBehavior(teamName, uNum, namedParams_, rsg_),
-      targetPos(0, 0, 0)
+      targetPos(0, 0, 0),
+      optimizer(this)
 {
     startTime = worldModel->getTime();
     //worldModel->useGroundTruthDataForLocalization();
