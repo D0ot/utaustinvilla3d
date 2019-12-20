@@ -19,10 +19,13 @@
 
 #include <map>
 
+#include <optimizer/optimizerutwalk.h>
+
 using namespace std;
 
 
 class UTWalkEngine {
+   friend class Optimizer; 
 public:
     UTWalkEngine ();
     virtual ~UTWalkEngine ();

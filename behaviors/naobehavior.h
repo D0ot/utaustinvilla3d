@@ -19,6 +19,9 @@
 #include <memory/SimEffectorBlock.h>
 #include <memory/WalkRequestBlock.h>
 
+// For Optimizer
+#include <optimizer/optimizer.h>
+
 using namespace std;
 
 // TODO: Temporary home. Not sure if this this the best place to put this.
@@ -47,6 +50,7 @@ struct WalkVelocity
 
 class NaoBehavior : public Behavior {
     friend class KickClassifier;
+    friend class Optimizer;
 protected:
 
     double currentFallStateStartTime;

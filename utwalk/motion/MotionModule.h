@@ -9,9 +9,11 @@
 #include <memory/SensorBlock.h>
 #include <memory/WalkRequestBlock.h>
 #include <motion/UTWalkEngine.h>
+#include <optimizer/optimizerutwalk.h>
 
 
 class MotionModule: public Module {
+    friend class Optimizer;
 public:
     virtual ~MotionModule();
 
