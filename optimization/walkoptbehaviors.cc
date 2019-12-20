@@ -17,13 +17,17 @@ void WalkOptBehaviors::beam(double &beamX, double &beamY, double &beamAngle)
 
 SkillType WalkOptBehaviors::selectSkill()
 {
+    if(worldModel->getPlayMode() == PM_PLAY_ON)
+    {
+        return goToTarget(targetPos);
+    }
     return SKILL_STAND;
 }
 void WalkOptBehaviors::updateFitness()
 {
-    /*auto timeElapsed = worldModel->getTime() - startTime;
+    auto timeElapsed = worldModel->getTime() - startTime;
 
-    if (timeElapsed < 300)
+    if (timeElapsed < 10)
     {
         return;
     }
@@ -36,10 +40,12 @@ void WalkOptBehaviors::updateFitness()
             setMonMessage("(playMode BeforeKickOff)");
             startTime = worldModel->getTime();
         }
+        lastOp = false;
     }
     else
     {
         setMonMessage("(playMode PlayOn)");
         startTime = worldModel->getTime();
-    }*/
+        lastOp = true;
+    }
 }
