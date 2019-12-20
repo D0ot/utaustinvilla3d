@@ -25,6 +25,9 @@ ${CORE_PATH}
 ${RCSSNET3D_INCLUDE_DIR}
 )
 
+# include the root directory of project
+include_directories(${PROJECT_SOURCE_DIR})
+
 set(CORE_FILES
   ${CORE_PATH}/MotionCore.cpp
   ${CORE_PATH}/Module.cpp  
@@ -80,6 +83,7 @@ set(SRCS
   optimization/optimizationbehaviors.cc
   optimization/walkoptbehaviors.cc
   stats/recordstatsbehavior.cc
+  optimizer/optimizer.cc
 )
 
 set(BINARY agentspark)
